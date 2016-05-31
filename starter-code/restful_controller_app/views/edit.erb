@@ -1,0 +1,10 @@
+<form method="PUT" action="/books/<%= @params.id %>"> <!-- should be /books/:id -->
+  <h4>Put action</h4>
+  <input type="text" name="book" placeholder="Change book!">
+  <button type="submit">Update</button>
+</form>
+
+<form method="DELETE" action="/books/<%= @params %>"> <!-- should be /books/:id -->
+  <h4>Delete action</h4>
+  <button type="submit">Delete</button>
+</form>
