@@ -4,7 +4,7 @@
   <button type="submit">Update</button>
 </form>
 
-<form method="DELETE" action="/books/<%= @params %>"> <!-- should be /books/:id -->
+<form method="POST" _method="delete" action="/books/<%= @params %>"> <!-- should be /books/:id -->
   <h4>Delete action</h4>
-  <button type="submit">Delete</button>
+  <button type="submit" name="delete" value="Delete">Delete</button>
 </form>

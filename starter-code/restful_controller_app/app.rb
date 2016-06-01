@@ -1,4 +1,5 @@
 class RestfulControllerApp < Sinatra::Base
+  RestfulControllerApp.use Rack::MethodOverride
 
   get "/" do 
     erb "sanity check"
@@ -55,11 +56,10 @@ class RestfulControllerApp < Sinatra::Base
     # params[:id]
   end 
 
-  # DESTROY
-  delete "/books/:id" do
-    # params[:id]
-    erb "Delete book " + params[:id]
-  end 
+  # DESTROY  -- can we change verb to delete?
+  post "/books/:id" do | id |     
+    erb "Book "  + params[:id] +  " is now dead"   # this should render /books
+  end
 
 
 end
