@@ -17,7 +17,7 @@ class RestfulControllerApp < Sinatra::Base
   # serve the form page to enable updating the books
   get "/books/new" do
     # erb "Shows the 'new book' form"
-    erb :new
+    erb :'new'
   end 
 
   # SHOW
@@ -30,9 +30,9 @@ class RestfulControllerApp < Sinatra::Base
   # EDIT
   # Show the form to update a specific book
   get "/books/:id/edit" do # should be "/books/:id/edit"
-    # params[:id]
+    @params = params[:id]
     # erb "This is the form to edit Book 3"
-    erb :edit
+    erb :'edit'
   end 
 
   # CREATE
@@ -50,7 +50,8 @@ class RestfulControllerApp < Sinatra::Base
 
   # UPDATE
   # Partially update one book
-  patch "/books/:id" do
+  # patch "/books/:id" do
+  put "/books/:id" do
     # params[:id]
   end 
 
